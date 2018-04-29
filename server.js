@@ -19,7 +19,7 @@ app.post('/deg', (req, res) => {
         response = alx.response;
 
     if (type === 'LaunchRequest') {
-        response.say("Welcome to Dreamhouse");
+        response.say("Welcome to DEG");
     } else if (type === 'IntentRequest') {
         let handler = handlers[intent];
         if (handler) {
