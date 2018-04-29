@@ -9,7 +9,7 @@ let express = require('express'),
 app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.json());
 
-app.post('/ipp', (req, res) => {
+app.post('/deg', (req, res) => {
 
     let alx = alexa(req, res),
         type = alx.type,
