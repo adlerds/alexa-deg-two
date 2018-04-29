@@ -41,7 +41,7 @@ let findProperties = (params) => {
         }
     }*/
     return new Promise((resolve, reject) => {
-        let q = `SELECT Id, refill_date__c FROM APS_Program_Affiliation__c WHERE APS_Account__c = '0011100001KyZIHAA3'`;
+        let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject(err);
