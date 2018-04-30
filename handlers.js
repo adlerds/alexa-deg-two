@@ -10,7 +10,7 @@ exports.SearchHouses = (slots, session, response) => {
                 if (properties && properties.length>0) {
                     let text = `OK, your next refill is `;
                     properties.forEach(property => {
-                        text += `${property.get("refill_date__c")}. <break time="0.5s" /> `;
+                        text += `${property.get("Delivery_date__c")}. <break time="0.5s" /> `;
                     });
                     response.say(text);
                 } else {
