@@ -46,7 +46,8 @@ let findProperties = (params) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(resp.records);
+//                resolve(resp.records);
+                resolve("Date here");
             }
         });
     });
