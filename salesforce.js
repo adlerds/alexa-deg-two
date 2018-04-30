@@ -40,9 +40,8 @@ let findProperties = (params) => {
             where = "WHERE " + parts.join(' AND ');
         }
     }*/
-//    return new Promise((resolve, reject) => {
-    return new Promise(("Good", "Bad") => {
-        let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
+    return new Promise((resolve, reject) => {
+        let q = `select Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject(err);
