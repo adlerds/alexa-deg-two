@@ -8,7 +8,7 @@ exports.SearchHouses = (slots, session, response) => {
         salesforce.findProperties()
             .then(properties => {
                 if (properties && properties.length>0) {
-                    let text = `OK, your next refill is `;
+                    let text = `OK, your order is expected delivery on `;
                     properties.forEach(property => {
                         text += `${property.get("Delivery_date__c")}. <break time="0.5s" /> `;
                     });
