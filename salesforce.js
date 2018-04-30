@@ -10,7 +10,7 @@ let nforce = require('nforce'),
 let org = nforce.createConnection({
     clientId: SF_CLIENT_ID,
     clientSecret: SF_CLIENT_SECRET,
-    redirectUri: 'http://localhost:3000/oauth/_callback',
+    redirectUri: 'https://localhost:8200/oauth/_callback',
     environment: 'production',  // optional, salesforce 'sandbox' or 'production', production default *Added to test if this will resolve 'instance_url' error
     mode: 'single',
     autoRefresh: true
