@@ -40,14 +40,14 @@ let findProperties = (params) => {
             where = "WHERE " + parts.join(' AND ');
         }
     }*/
-    return new Promise((resolve, reject) => {
+//    return new Promise((resolve, reject) => {
+    return new Promise(("Good", "Bad") => {
         let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject(err);
             } else {
-//                resolve(resp.records);
-                resolve("Date here");
+                resolve(resp.records);
             }
         });
     });
