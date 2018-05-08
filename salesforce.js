@@ -44,7 +44,7 @@ let findProperties = (params) => {
         let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
-                reject(err);
+                reject("an error occured");
             } else {
                 resolve(resp.records);
             }
@@ -72,7 +72,7 @@ let countEmails = (params) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(resp.records);
+                resolve("good");
             }
         });
     });
