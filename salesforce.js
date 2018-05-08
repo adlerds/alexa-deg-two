@@ -72,7 +72,7 @@ let countEmails = (params) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(resp.records);
+                resolve("good");
             }
         });
     });
