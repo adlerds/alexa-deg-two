@@ -55,6 +55,7 @@ let findProperties = (params) => {
 
 let countEmails = (params) => {
     let where = "";
+    return new Promise("good", "bad"));
 /*    if (params) {
         let parts = [];
         if (params.id) parts.push(`id='${params.id}'`);
@@ -65,7 +66,7 @@ let countEmails = (params) => {
         if (parts.length>0) {
             where = "WHERE " + parts.join(' AND ');
         }
-    }*/
+    }
     return new Promise((resolve, reject) => {
         let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
@@ -76,7 +77,7 @@ let countEmails = (params) => {
             }
         });
     });
-
+/*
 };
 
 let findPriceChanges = () => {
