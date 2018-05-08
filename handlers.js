@@ -89,9 +89,10 @@ exports.Changes = (slots, session, response) => {
     salesforce.findPriceChanges()
         .then(priceChanges => {
                 if (priceChanges && priceChanges.length>0) {
-                    let text = `OK, your order is expected delivery on `;
+                    let text = `OK, D. E. G sent  `;
                     priceChanges.forEach(property => {
                         text += `${property.get("emails_sent__C")}. <break time="0.5s" /> `;
+                        text += ' emails last month';    
                     });
                     response.say(text);
                 } else {
