@@ -80,28 +80,12 @@ let countEmails = (params) => {
 };
 
 let findPriceChanges = () => {
+    let where = "";
     return new Promise((resolve, reject) => {
-        let q = `SELECT
-                    OldValue,
-                    NewValue,
-                    CreatedDate,
-                    Field,
-                    Parent.Id,
-                    Parent.title__c,
-                    Parent.address__c,
-                    Parent.city__c,
-                    Parent.state__c,
-                    Parent.price__c,
-                    Parent.beds__c,
-                    Parent.baths__c,
-                    Parent.picture__c
-                FROM property__history
-                WHERE field = 'Price__c'
-                ORDER BY CreatedDate DESC
-                LIMIT 3`;
+        let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
-                reject("An error as occurred");
+                reject(err);
             } else {
                 resolve(resp.records);
             }
