@@ -91,7 +91,7 @@ exports.Changes = (slots, session, response) => {
                 if (priceChanges && priceChanges.length>0) {
                     let text = `OK, your order is expected delivery on `;
                     priceChanges.forEach(property => {
-                        text += `${priceChanges.get("Delivery_date__c")}. <break time="0.5s" /> `;
+                        text += `${priceChanges.get("emails_sent__C")}. <break time="0.5s" /> `;
                     });
                     response.say(text);
                 } else {
