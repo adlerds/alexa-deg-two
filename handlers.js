@@ -26,11 +26,11 @@ exports.SearchHouses = (slots, session, response) => {
 exports.EmailCount = (slots, session, response) => {
 //    session.attributes.stage = "ask_city";
 //    response.ask("OK, in what city?");
-        salesforce.countEmails()
-            .then(properties => {
-                if (properties && properties.length>0) {
+        salesforce.findEmailCount()
+            .then(EmailCount => {
+                if (EmailCount && EmailCount.length>0) {
                     let text = `OK, your order is expected delivery on `;
-                    properties.forEach(property => {
+                    EmailCount.forEach(property => {
                         text += `${property.get("Delivery_date__c")}. <break time="0.5s" /> `;
                     });
                     response.say(text);
