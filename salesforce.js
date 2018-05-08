@@ -82,7 +82,7 @@ let countEmails = (params) => {
 let findPriceChanges = () => {
     let where = "";
     return new Promise((resolve, reject) => {
-        let q = `select ID, emails_sent__C from Account where ID = '0011I00000QTYa1QAH'`;
+        let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject(err);
