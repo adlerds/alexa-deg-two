@@ -88,16 +88,18 @@ exports.AnswerNumber = (slots, session, response) => {
 exports.Changes = (slots, session, response) => {
     salesforce.findPriceChanges()
         .then(priceChanges => {
-            let text = "OK, here are the recent price changes: ";
-            priceChanges.forEach(priceChange => {
-                    let property = priceChange.get("Parent");
-                    text += `${property.Address__c}, ${property.City__c}.<break time="0.2s"/>
-                            Price changed from $${priceChange.get("OldValue")} to $${priceChange.get("NewValue")}.<break time="0.5s"/>`;
-            });
-           response.say(text);
-        })
-        .catch((err) => {
-            console.error(err);
-            response.say("Oops. Something went wrong");
+                if (priceChanges && priceChanges.length>0) {
+                    let text = `OK, your order is expected delivery on `;
+                    priceChanges.forEach(property => {
+                        text += `${priceChanges.get("Delivery_date__c")}. <break time="0.5s" /> `;
+                    });
+                    response.say(text);
+                } else {
+                    response.say(`Sorry, I didn't find any that.`);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                response.say("Oops. Something went wrong");
         });
 };
