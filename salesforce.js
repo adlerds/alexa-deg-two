@@ -55,17 +55,6 @@ let findProperties = (params) => {
 
 let countEmails = (params) => {
     let where = "";
-/*    if (params) {
-        let parts = [];
-        if (params.id) parts.push(`id='${params.id}'`);
-        if (params.city) parts.push(`city__c='${params.city}'`);
-        if (params.bedrooms) parts.push(`beds__c=${params.bedrooms}`);
-        if (params.priceMin) parts.push(`price__c>=${params.priceMin}`);
-        if (params.priceMax) parts.push(`price__c<=${params.priceMax}`);
-        if (parts.length>0) {
-            where = "WHERE " + parts.join(' AND ');
-        }
-    }*/
     return new Promise((resolve, reject) => {
         let q = `select ID, emails_sent__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
