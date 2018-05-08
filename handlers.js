@@ -33,7 +33,7 @@ exports.EmailCount = (slots, session, response) => {
                     properties.forEach(property => {
                         text += `${property.get("Delivery_date__c")}. <break time="0.5s" /> `;
                     });
-                    response.say(text);
+                    response.say("good");
                 } else {
                     response.say(`Sorry, I didn't find any that.`);
                 }
