@@ -4,7 +4,7 @@ let salesforce = require("./salesforce");
 
 exports.SearchHouses = (slots, session, response) => {
 //    session.attributes.stage = "ask_city";
-//    response.ask("OK, in what city?");
+    response.ask("OK, in what city?");
         salesforce.findProperties()
             .then(properties => {
                 if (properties && properties.length>0) {
