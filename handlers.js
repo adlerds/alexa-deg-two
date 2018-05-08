@@ -91,8 +91,8 @@ exports.Changes = (slots, session, response) => {
                 if (priceChanges && priceChanges.length>0) {
                     let text = `OK, D E G sent  `;
                     priceChanges.forEach(property => {
-                        text += `${property.get("emails_sent__C")}. <break time="0.5s" /> `;
-                        text += ' emails last month';    
+                        text += `${property.get("emails_sent__C")}`;
+                        text += ' emails last month. <break time="0.5s" />';    
                     });
                     response.say(text);
                 } else {
