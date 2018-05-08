@@ -28,8 +28,9 @@ let login = () => {
 };
 
 let findProperties = (params) => {
-    let where = "";
-/*    if (params) {
+    return ("good", "bad");
+    /*    let where = "";
+    if (params) {
         let parts = [];
         if (params.id) parts.push(`id='${params.id}'`);
         if (params.city) parts.push(`city__c='${params.city}'`);
@@ -39,7 +40,7 @@ let findProperties = (params) => {
         if (parts.length>0) {
             where = "WHERE " + parts.join(' AND ');
         }
-    }*/
+    }
     return new Promise((resolve, reject) => {
         let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
@@ -49,12 +50,13 @@ let findProperties = (params) => {
                 resolve(resp.records);
             }
         });
-    });
+    });*/
 
 };
 
 let countEmails = (params) => {
     let where = "";
+    return ("good", "bad");
 /*    if (params) {
         let parts = [];
         if (params.id) parts.push(`id='${params.id}'`);
@@ -65,7 +67,7 @@ let countEmails = (params) => {
         if (parts.length>0) {
             where = "WHERE " + parts.join(' AND ');
         }
-    }*/
+    }
     return new Promise((resolve, reject) => {
         let q = `select ID, Delivery_date__c from order where id = '8011I000000fwTYQAY'`;
         org.query({query: q}, (err, resp) => {
@@ -76,7 +78,7 @@ let countEmails = (params) => {
             }
         });
     });
-
+/*
 };
 
 let findPriceChanges = () => {
