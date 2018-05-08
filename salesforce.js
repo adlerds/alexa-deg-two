@@ -55,7 +55,7 @@ let findProperties = (params) => {
 
 let countEmails = (params) => {
     let where = "";
-    return new Promise("good", "bad"));
+    return new Promise("good", "bad");
 /*    if (params) {
         let parts = [];
         if (params.id) parts.push(`id='${params.id}'`);
