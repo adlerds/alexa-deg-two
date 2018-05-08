@@ -53,7 +53,7 @@ let findProperties = (params) => {
 
 };
 
-let countEmails = (params) => {
+let frindEmailCount = (params) => {
     let where = "";
     return new Promise((resolve, reject) => {
         let q = `select ID, emails_sent__c from order where id = '8011I000000fwTYQAY'`;
@@ -109,5 +109,6 @@ login();
 
 exports.org = org;
 exports.findProperties = findProperties;
+exports.frindEmailCount = frindEmailCount;
 exports.findPriceChanges = findPriceChanges;
 exports.createCase = createCase;
