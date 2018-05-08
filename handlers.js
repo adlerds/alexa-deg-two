@@ -86,12 +86,12 @@ exports.AnswerNumber = (slots, session, response) => {
 };
 
 exports.Changes = (slots, session, response) => {
-    salesforce.findPriceChanges()
-        .then(priceChanges => {
-                if (priceChanges && priceChanges.length>0) {
+        salesforce.findProperties()
+            .then(properties => {
+                if (properties && properties.length>0) {
                     let text = `OK, your order is expected delivery on `;
-                    priceChanges.forEach(property => {
-                        text += `${priceChanges.get("Delivery_date__c")}. <break time="0.5s" /> `;
+                    properties.forEach(property => {
+                        text += `${property.get("Delivery_date__c")}. <break time="0.5s" /> `;
                     });
                     response.say(text);
                 } else {
@@ -101,5 +101,5 @@ exports.Changes = (slots, session, response) => {
             .catch((err) => {
                 console.error(err);
                 response.say("Oops. Something went wrong");
-        });
+            });
 };
