@@ -25,8 +25,8 @@ exports.SearchHouses = (slots, session, response) => {
 
 exports.EmailCount = (slots, session, response) => {
 //    session.attributes.stage = "ask_city";
-    response.ask("OK, in what city?");
-        salesforce.findProperties()
+//    response.ask("OK, in what city?");
+        salesforce.countEmails()
             .then(properties => {
                 if (properties && properties.length>0) {
                     let text = `OK, your order is expected delivery on `;
