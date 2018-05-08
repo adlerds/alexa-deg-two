@@ -86,7 +86,7 @@ exports.AnswerNumber = (slots, session, response) => {
 };
 
 exports.Changes = (slots, session, response) => {
-        salesforce.findProperties()
+        salesforce.findPriceChanges()
             .then(properties => {
                 if (properties && properties.length>0) {
                     let text = `OK, your order is expected delivery on `;
